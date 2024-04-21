@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .top-left-box{
+            width: 200px; 
+        }
+        .login-container{
+            width:30%;
+        }
+
+</style>
+</head>
+<body class="login-body">
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <a href="dashboard.html" class="top-left-box">
+        <div class="box-content">
+            <p class="box-text">Dashboard</p>
+        </div>
+    </a>
+
+
+    <div class="login-container">
+
+        <h2>Create Tournament</h2>
+
+        <form class="login-form">
+            <div class="form-group">
+                <label for="tID">Tournament ID:</label>
+                <input type="text" id="tID" name="tournamentID" placeholder="Enter ID of the tournament" required>
+            </div>
+            <div class="form-group">
+                <label for="tName">Tournament Name:</label>
+                <input type="text" id="tName" name="tournamentName" placeholder="Enter name of the tournament" required>
+            </div>
+            <div class="form-group">
+                <label for="numTeams">Number of Teams:</label>
+                <input type="number" id="numTeams" name="numberOfTeams" placeholder="Enter number of teams" required>
+            </div>
+            <div class="form-group">
+                <label for="tDate">Date:</label>
+                <input type="date" id="tDate" name="tDate" placeholder="Enter date" required>
+            </div>
+            <div class="form-group">
+                <label for="game">Select Game:</label>
+                <select>
+                    <option>VALORANT</option>
+                    <option>CS:GO</option>
+                    <option>PUBG</option>
+                    <option>WARZONE</option>
+                </select>
+            </div>
+            <button type="submit" class="login-button">Create</button>
+        </form>
+
+    </div>    
+</body>
+</html>

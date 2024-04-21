@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <a href="index.html" class="top-left-box">
+        <div class="box-content">
+            <p class="box-text">Home</p>
+        </div>
+    </a>
+    <a href="login.html" class="top-right-box">
+        <div class="box-content">
+            <p class="box-text">Login</p>
+        </div>
+    </a>
+    
+    <div class="login-container">
+
+        <h2>Register</h2>
+
+        <form action="/register" method="POST" class="login-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="organisationName">Organisation Name:</label>
+                <input type="text" id="org-name" name="orgName" placeholder="Enter your organisation name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm password:</label>
+                <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit" class="login-button">Register</button>
+        </form>
+
+        <div class="register-link">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
+
+    </div>  
+</body>
+</html>

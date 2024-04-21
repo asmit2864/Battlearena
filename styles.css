@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* custom font */
+@font-face {
+    font-family: logoFont;
+    src: url(logoFont.ttf);
+}
+@font-face {
+    font-family: sloganFont;
+    src: url(sloganFont.ttf);
+}
+@font-face {
+    font-family: navBarFont;
+    src: url(navBarFont.ttf);
+}
+@font-face {
+    font-family: loginRegisterFont;
+    src: url(loginRegisterFont.otf);
+}
+@font-face {
+    font-family: loginFont;
+    src: url(loginFont.ttf);
+}
+@font-face {
+    font-family: loginRegisterTextFont;
+    src: url(loginRegisterTextFont.otf);
+}
+@font-face {
+    font-family: valorantFont;
+    src: url(ValorantFont.ttf);
+}
+@font-face {
+    font-family: csgoFont;
+    src: url(csgoFont.ttf);
+}
+@font-face {
+    font-family: pubgFont;
+    src: url(pubgFont.ttf);
+}
+@font-face {
+    font-family: warzoneFont;
+    src: url(warzoneFont.otf);
+}
+@font-face {
+    font-family: sidebarFont;
+    src: url(sidebarFont.ttf);
+}
+
+/* Global Styles */
+.home-body {
+    font-family: Arial, sans-serif;
+    background-image: url('BACKGROUND.jpg'); /* Replace 'image.jpg' with your actual image path */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    display: flex;
+    flex-direction: column;
+    transition: background-image 1s;
+    min-height: 100vh; /* Set minimum height of the viewport */
+}
+/* Global Styles */
+
+/* Main Content Container */
+.main-content {
+    flex: 1; /* Allow content to expand and push footer to the bottom */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.2); /* Adjust opacity as needed (0.8 for 80% opacity) */
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    color: #fff; /* Change to desired text color */
+    font-size: 28px;
+    font-weight: bold;
+    font-family: logoFont;
+    text-decoration: none;
+    transition: font-size 0.7s ease-in-out; /* Smooth transition on hover */
+}
+
+.navbar-brand:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Add dark shadow behind text on hover */
+}
+
+.navbar-brand img {
+    width: 70px;
+    height: auto;
+    margin-right: 20px;
+    vertical-align: middle;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the logo image */
+
+}
+
+.navbar-brand:hover img {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Add dark shadow behind text on hover */
+}
+
+.navbar-links {
+    margin-left: auto; /* Pushes the links to the right */
+}
+
+.navbar-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.navbar-links ul li:first-child {
+    margin-left: 0;
+}
+
+.navbar-links ul li a {
+    color: #fff; /* Change to desired text color */
+    text-decoration: none;
+    font-size: 18px; /* Adjust font size as needed */
+    font-family: navBarFont;
+    transition: all 0.3s ease-in-out;
+    padding: 8px 15px;
+}
+
+.navbar-links ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Login register buttons*/
+.login-register-buttons {
+    margin-left: auto; /* Align the buttons to the right */
+    display: flex; /* Use flexbox for better alignment */
+    align-items: center; /* Center the items vertically */
+}
+
+.login-button-home, .register-button-home {
+    background-color: rgb(255, 255, 255,0.2); /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 16px; /* Button font size */
+    font-family: loginRegisterFont;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+.login-button-home:hover {
+    background-color: #007bff; /* Change background color to blue on hover */
+}
+
+.register-button-home:hover {
+    background-color: #28a745; /* Change background color to green on hover */
+}
+
+.separator {
+    width: 1px; /* Width of the line */
+    height: 30px; /* Height of the line */
+    background-color: rgba(255, 255, 255, 0.5); /* Translucent line color */
+    margin: 0 20px; /* Adjust the gap between the buttons and the line */
+}
+
+
+/* Hero Section Styles */
+.hero-section {
+    text-align: center; /* Center align the hero text */
+    padding: 200px 0px; /* Adjust vertical padding as needed */
+    
+}
+
+/* Hero Text Styles */
+.hero-text {
+    color: #fff; /* Text color */
+    font-size: 96px; /* Font size */
+    font-family: sloganFont;
+    text-transform: uppercase; /* Convert text to uppercase */
+    font-weight: bold; /* Font weight */
+}
+
+/* Gaming zone */
+.games-available{
+    text-align: center;
+    font-family:loginRegisterTextFont;
+    font-size:50px;
+    color:white;
+    margin-top:70px;
+}
+
+.games-section{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+/* game1 */
+.games1 {
+    width: 80%;
+    height: 50vh; /* 80% of the viewport height */
+    margin:auto; /* Center the container vertically */
+    margin-right:10px;
+    border-radius: 20px; /* Rounded corners */
+    background-image: url('game1.jpg');
+    background-size: cover;
+    position: relative;
+    flex-basis:43%;
+  }
+  
+  .games-overlay1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.3); /* Translucent overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px; /* Rounded corners */
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .games-overlay1:hover {
+    opacity: 1;
+  }
+  
+  .games-overlay-text1 {
+    color: white;
+    font-size:100px;
+    font-family: valorantFont;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s; /* Added transform transition */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%); /* Initially move it down */
+  }
+  
+  .games-overlay1:hover .games-overlay-text1 {
+    opacity: 1;
+    cursor:pointer;
+  }
+  
+/* game2 */
+.games2 {
+    width: 80%;
+    height: 50vh; /* 80% of the viewport height */
+    margin: 10vh auto; /* Center the container vertically */
+    border-radius: 20px; /* Rounded corners */
+    background-image: url('game2.jpg');
+    background-size: cover;
+    position: relative;
+    flex-basis:43%;
+  }
+  
+  .games-overlay2 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 255, 64, 0.3); /* Translucent overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px; /* Rounded corners */
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .games-overlay2:hover {
+    opacity: 1;
+  }
+  
+  .games-overlay-text2 {
+    color: white;
+    font-size:100px;
+    font-family: csgoFont;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s; /* Added transform transition */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%); /* Initially move it down */
+  }
+  
+  .games-overlay2:hover .games-overlay-text2 {
+    opacity: 1;
+    cursor:pointer;
+  }
+  
+/* game3 */
+.games3 {
+    width: 80%;
+    height: 50vh; /* 80% of the viewport height */
+    margin: auto; /* Center the container vertically */
+    margin-right:10px;
+    margin-top:15px;
+    border-radius: 20px; /* Rounded corners */
+    background-image: url('game3.jpg');
+    background-size: cover;
+    position: relative;
+    flex-basis:43%;
+  }
+  
+  .games-overlay3 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.352); /* Translucent overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px; /* Rounded corners */
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .games-overlay3:hover {
+    opacity: 1;
+  }
+  
+  .games-overlay-text3 {
+    color: white;
+    font-size:100px;
+    font-family: pubgFont;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s; /* Added transform transition */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%); /* Initially move it down */
+  }
+  
+  .games-overlay3:hover .games-overlay-text3 {
+    opacity: 1;
+    cursor:pointer;
+  }
+  
+/* game4 */
+.games4 {
+    width: 80%;
+    height: 50vh; /* 80% of the viewport height */
+    margin:auto; /* Center the container vertically */
+    margin-top:15px;
+    margin-bottom: 90px;
+    border-radius: 20px; /* Rounded corners */
+    background-image: url('game4.jpg');
+    background-size: cover;
+    position: relative;
+    flex-basis:43%;
+  }
+  
+  .games-overlay4 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.352); /* Translucent overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px; /* Rounded corners */
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .games-overlay4:hover {
+    opacity: 1;
+  }
+  
+  .games-overlay-text4 {
+    color: white;
+    font-size:100px;
+    font-family: warzoneFont;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s; /* Added transform transition */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Initially move it down */
+  }
+  
+  .games-overlay4:hover .games-overlay-text4 {
+    opacity: 1;
+    cursor:pointer;
+  }
+
+  /* Modal Styles */
+.modal, .modal2, .modal3, .modal4{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe00;
+    margin:20px auto; /* 15% from the top and centered */
+    padding: 0px 4px;
+    border: 0px solid #888;
+    width: 70%; /* Could be more or less, depending on screen size */
+}
+
+
+/* Close Button */
+.close1, .close2, .close3, .close4{
+    color: #aaa;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius:50%;
+}
+
+.close1:hover,.close2:hover,.close3:hover,.close4:hover,
+.close1:focus,.close2:focus,.close3:focus,.close4:focus {
+    color: rgb(221, 22, 19);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+  
+  /* login form */
+  .top-left-box,
+  .top-right-box {
+      position: fixed;
+      width: 150px; /* Adjust width as needed */
+      height: 60px; /* Adjust height as needed */
+      background-color: rgb(0, 0, 0,0.4); /* Blue background color */
+      color: #fff; /* Text color */
+      border-radius: 10px; /* Rounded corners */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2; /* Ensure the boxes are above other content */
+      text-decoration: none; /* Remove underline from anchor tag */
+      transition: transform 0.3s; /* Add transition for smooth zoom effect */
+  }
+  .top-left-box {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right-box {
+    top: 20px;
+    right: 20px;
+}
+
+  .top-left-box:hover,
+  .top-right-box:hover {
+      transform: scale(1.05); /* Zoom effect on hover */
+  }
+  
+  .box-content {
+      font-family: loginRegisterTextFont;
+  }
+  .box-text {
+      margin-top: 6px;
+      padding: 0;
+  }
+  
+  .top-left-box:active,
+  .top-right-box:active {
+      transform: scale(0.95); /* Slight zoom effect on click */
+  }
+  
+  
+
+.login-body {
+    margin: auto;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+.login-container {
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.6); /* Translucent background color */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family:loginFont;
+    font-size:30px;
+}
+
+.login-form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.login-button i {
+    margin-left: 5px;
+}
+
+.register-link {
+    text-align: center;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Game 1 page */
+
+.game1-body{
+    background-color: black;
+}
+#video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.info-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto; /* Enable vertical scroll if content overflows */
+}
+
+.info-content {
+    margin-bottom: 20px;
+}
+
+.create-tournament button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.create-tournament button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: rgb(51, 51, 51,0.2); /* Change to desired footer background color */
+    color: #fff; /* Change to desired footer text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+
+/* DASHBOARD PAGE */
+
+/* sidemenu */
+.sidebar{
+    position:sticky;
+    top: 0;
+    left:0;
+    bottom:0;
+    width:110px;
+    height:100vh;
+    padding:0 1.7rem;
+    color:#fff;
+    overflow:hidden;
+    transition: all 0.5s linear;
+    background: black;
+  
+  }
+.sidebarFont{
+    font-family:sidebarFont;
+}
+
+  .sidebar:hover{
+    width:270px;
+    transition: 0.5s;
+  }
+  .logo{
+    height:80px;
+    padding:16px;
+  }
+  .menu{
+    height:88%;
+    position:relative;
+    list-style: none;
+    padding: 0;
+    margin-left: -10px;
+  }
+  .menu li{
+    padding:1rem;
+    margin:8px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  .menu li:hover{
+      background: #e0e0e058;
+  
+    }
+  
+  .menu a{
+    color:#fff;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+  }
+  .menu a span{
+    overflow: hidden;
+  }
+  .menu a i{
+    font-size: 1.2rem;
+  }
+
+
+
+.dashboard-body {
+    background-image: linear-gradient(to bottom, #1a1a1a, #333333);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    display: flex;
+    flex-direction: column;
+    transition: background-image 1s;
+    min-height: 100vh; /* Set minimum height of the viewport */
+}
+
+.welcome-text {
+    margin-left:160px;
+    font-size: 80px; /* Adjust font size as needed */
+    color: #ffffff; /* Text color */
+    margin-top: 30px; /* Adjust top margin as needed */
+}
+
+.dashboard-hero-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px; /* Adjust margin as needed */
+    margin-left:140px;
+    margin-right:30px;
+}
+
+.dashboard-section {
+    flex: 0 0 48%; /* Adjust width of each section */
+    background-color: rgba(255, 255, 255, 0.7); /* Translucent background color */
+    padding: 20px;
+    border-radius: 10px;
+    margin-right:10px;
+    margin-left:10px;
+    height:75vh;
+    overflow:hidden;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 16px;
+    font-family:loginFont;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.dashboard-table th {
+    background-color: #f2f2f2;
+}
+
+
+
+/* create tournament page */
+
+.create-tournament-btn {
+    position:absolute;
+    top: 60px; /* Adjust top position as needed */
+    right: 80px; /* Adjust right position as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #2e8907; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer;
+    font-size:30px;
+    font-family:loginRegisterFont;
+    transition: background-color 0.3s, transform 0.3s; /* Add smooth transition for hovering and clicking effects */
+}
+
+.create-tournament-btn:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
+
+.create-tournament-btn:active {
+    transform: scale(0.95); /* Button scaling effect on click */
+}
+

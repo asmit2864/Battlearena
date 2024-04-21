@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Tournament Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="home-body">
+
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Gaming Tournament Logo" width="50">
+            BattleArena
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">TOURNAMENTS</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <!-- Add more menu items as needed -->
+            </ul>
+        </div>
+        <div class="login-register-buttons">
+            <a href="login.html"><button class="login-button-home">Login</button></a>
+            <div class="separator"></div> <!-- Separator line -->
+            <a href="register.html"><button class="register-button-home">Register</button></a>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="hero-text">Rise to the Challenge</h1>
+    </div>
+</section>
+
+
+    <!-- Optional: Other Sections -->
+
+    <div class="main-content">
+        <!-- Content Goes Here -->
+        <div class="games-available">
+            Games
+        </div>
+        <!-- game section -->
+        <section class="games-section">
+
+            <div class="games1" id="here">
+                <div class="games-overlay1">
+                  <a class="open-video-modal"><p class="games-overlay-text1">vALORanT</p></a>
+                </div>
+            </div>
+            <div id="video-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close1">&times;</span>
+                    <video controls muted autoplay loop style="width:100%;border-radius:10px;">
+                        <source src="game1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="games2">
+                <div class="games-overlay2">
+                  <a class="open-video-modal2"><p class="games-overlay-text2">CS:GO</p></a>
+                </div>
+            </div>
+            <div id="video-modal2" class="modal2">
+                <div class="modal-content">
+                    <span class="close2">&times;</span>
+                    <video controls muted autoplay loop style="width:100%;border-radius:10px;">
+                        <source src="game1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="games3">
+                <div class="games-overlay3">
+                  <a class="open-video-modal3"><p class="games-overlay-text3">PUBG</p></a>
+                </div>
+            </div>
+            <div id="video-modal3" class="modal3">
+                <div class="modal-content">
+                    <span class="close3">&times;</span>
+                    <video controls muted autoplay loop style="width:100%;border-radius:10px;">
+                        <source src="game1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="games4">
+                <div class="games-overlay4">
+                  <a class="open-video-modal4"><p class="games-overlay-text4">WARZONE</p></a>
+                </div>
+            </div>
+            <div id="video-modal4" class="modal4">
+                <div class="modal-content">
+                    <span class="close4">&times;</span>
+                    <video controls muted autoplay loop style="width:100%;border-radius:10px;">
+                        <source src="game1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+              
+            <!-- Add more game divs as needed -->
+        </section>
+        
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Gaming Tournament Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- script for background change-->
+    <script>
+        window.addEventListener('scroll', function() {
+            var body = document.body;
+            var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+            // Change background image based on scroll position
+            if (scrollTop > 200) {
+                body.style.backgroundImage = "url('BACKGROUND1.jpg')"; // Change to desired background image
+            } else {
+                body.style.backgroundImage = "url('BACKGROUND.jpg')"; // Change to default background image
+            }
+        });
+
+    </script>
+
+    <!-- script for video popup -->
+    <script>
+        // GAME1
+        // Get the modal and close button
+        var modal = document.getElementById("video-modal");
+        var closeBtn = document.getElementsByClassName("close1")[0];
+
+        // Get the link to open the modal
+        var openVideoModal = document.getElementsByClassName("open-video-modal")[0];
+
+        // When the user clicks on the link, open the modal
+        openVideoModal.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on the close button, close the modal
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // GAME2
+        // Get the modal and close button
+        var modal2 = document.getElementById("video-modal2");
+        var closeBtn2 = document.getElementsByClassName("close2")[0];
+
+        // Get the link to open the modal
+        var openVideoModal2 = document.getElementsByClassName("open-video-modal2")[0];
+
+        // When the user clicks on the link, open the modal
+        openVideoModal2.onclick = function() {
+            modal2.style.display = "block";
+        }
+
+        // When the user clicks on the close button, close the modal
+        closeBtn2.onclick = function() {
+            modal2.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        }
+
+        // GAME3
+        // Get the modal and close button
+        var modal3 = document.getElementById("video-modal3");
+        var closeBtn3 = document.getElementsByClassName("close3")[0];
+
+        // Get the link to open the modal
+        var openVideoModal3 = document.getElementsByClassName("open-video-modal3")[0];
+
+        // When the user clicks on the link, open the modal
+        openVideoModal3.onclick = function() {
+            modal3.style.display = "block";
+        }
+
+        // When the user clicks on the close button, close the modal
+        closeBtn3.onclick = function() {
+            modal3.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal3) {
+                modal3.style.display = "none";
+            }
+        }
+
+        // GAME4
+        // Get the modal and close button
+        var modal4 = document.getElementById("video-modal4");
+        var closeBtn4 = document.getElementsByClassName("close4")[0];
+
+        // Get the link to open the modal
+        var openVideoModal4 = document.getElementsByClassName("open-video-modal4")[0];
+
+        // When the user clicks on the link, open the modal
+        openVideoModal4.onclick = function() {
+            modal4.style.display = "block";
+        }
+
+        // When the user clicks on the close button, close the modal
+        closeBtn4.onclick = function() {
+            modal4.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal4) {
+                modal4.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

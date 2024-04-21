@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .main-content{
+            margin-top:20px;
+            margin-left:105px;
+        }
+    </style>
+</head>
+<body class="dashboard-body">
+    
+    <h1 class="welcome-text">Welcome, User</h1>
+    
+    <button class="create-tournament-btn" href="createTournament.html">Create Tournament</button>
+    
+    <div class="dashboard-hero-section">
+        <div class="dashboard-section">
+            <h2 class="section-heading">Your Tournaments</h2>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Participants</th>
+                        <th>Date</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <!-- Add table rows for your tournaments -->
+            </table>
+        </div>
+
+        <div class="dashboard-section">
+            <h2 class="section-heading">Results</h2>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Winner</th>
+                    </tr>
+                </thead>
+                <!-- Add table rows for results -->
+            </table>
+        </div>
+    </div>
+
+    <div class="main-content" id="gameSection">
+        <!-- Content Goes Here -->
+        <div class="games-available">
+            Games
+        </div>
+        <!-- game section -->
+        <section class="games-section">
+
+            <div class="games1" id="here">
+                <div class="games-overlay1">
+                  <a href="game1.html"><p class="games-overlay-text1">vALORanT</p></a>
+                </div>
+            </div>
+            
+
+            <div class="games2">
+                <div class="games-overlay2">
+                  <a href="game2.html""><p class="games-overlay-text2">CS:GO</p></a>
+                </div>
+            </div>
+            
+
+            <div class="games3">
+                <div class="games-overlay3">
+                  <a href="game3.html"><p class="games-overlay-text3">PUBG</p></a>
+                </div>
+            </div>
+            
+
+            <div class="games4">
+                <div class="games-overlay4">
+                  <a href="game4.html"><p class="games-overlay-text4">WARZONE</p></a>
+                </div>
+            </div>
+            
+              
+            <!-- Add more game divs as needed -->
+        </section>
+        
+    </div>
+
+    <div class="sidebar">
+        <div class="logo">
+            <br><br>
+            <ul class="menu">
+                <li  class="active"> <a href ="index.html"><i class="fa fa-home" aria-hidden="true"></i>
+                <span class="sidebarFont">Home</span></a>
+                </li>
+                <li> <a href ="profile.html"><i class="fas fa-user"></i>
+                <span class="sidebarFont">Profile</span></a>
+                </li>
+                <li> <a href ="#"><i class="fas fa-file-invoice"></i>
+                <span class="sidebarFont">Tournaments</span></a>
+                </li>
+                <li> <a href ="#gameSection"><i class="fa fa-gamepad" aria-hidden="true"></i>
+                <span class="sidebarFont" style="margin-left:-5px;">Games</span></a>
+                </li>
+                <li> <a href ="contact.html"><i class="fa fa-phone" aria-hidden="true"></i>
+                <span class="sidebarFont">Contact</span></a>
+                </li>
+                <li> <a href ="about.html"><i style="margin-left:3px;" class="fa fa-info" aria-hidden="true"></i>
+                <span class="sidebarFont" style="margin-left:9px;">About</span></a>
+                </li>
+                <li> <a href ="/logout"><i class="fas fa-sign-out-alt"></i>
+                <span class="sidebarFont" style="margin-left:-3px;">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+</body>
+</html>
