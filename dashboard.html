@@ -17,10 +17,43 @@
 </head>
 <body class="dashboard-body">
     
-    <h1 class="welcome-text">Welcome, User</h1>
-    
-    <button class="create-tournament-btn" href="createTournament.html">Create Tournament</button>
-    
+    <div style="display:flex;">  
+        <div class="sidebar">
+        <div class="logo">
+            <br><br>
+            <ul class="menu">
+                <li  class="active"> <a href ="index.html"><i class="fa fa-home" aria-hidden="true"></i>
+                <span class="sidebarFont">Home</span></a>
+                </li>
+                <li> <a href ="profile.html"><i class="fas fa-user"></i>
+                <span class="sidebarFont">Profile</span></a>
+                </li>
+                <li> <a href ="declareResult.html"><i class="fas fa-file-invoice"></i>
+                <span class="sidebarFont">Declare Results</span></a>
+                </li>
+                <li> <a href ="userForm.html"><i class="fas fa-file-invoice"></i>
+                <span class="sidebarFont">Team Registration</span></a>
+                </li>
+                <li> <a href ="#gameSection"><i class="fa fa-gamepad" aria-hidden="true"></i>
+                <span class="sidebarFont" style="margin-left:-5px;">Games</span></a>
+                </li>
+                <li> <a href ="contact.html"><i class="fa fa-phone" aria-hidden="true"></i>
+                <span class="sidebarFont">Contact</span></a>
+                </li>
+                <li> <a href ="about.html"><i style="margin-left:3px;" class="fa fa-info" aria-hidden="true"></i>
+                <span class="sidebarFont" style="margin-left:9px;">About</span></a>
+                </li>
+                <li> <a href ="/logout"><i class="fas fa-sign-out-alt"></i>
+                <span class="sidebarFont" style="margin-left:-3px;">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+<div style="width:100%;">   
+    <h1 id="username-placeholder" class="welcome-text"> </h1>
+        
+    <a  href="createTournament.html"><button class="create-tournament-btn">Create Tournament</button></a>
     <div class="dashboard-hero-section">
         <div class="dashboard-section">
             <h2 class="section-heading">Your Tournaments</h2>
@@ -31,10 +64,12 @@
                         <th>Name</th>
                         <th>Participants</th>
                         <th>Date</th>
-                        <th>Link</th>
+                        <!-- <th>Link</th> -->
                     </tr>
                 </thead>
-                <!-- Add table rows for your tournaments -->
+                <tbody id="tournamentsBody">
+                    <!-- Table rows will be dynamically inserted here -->
+                </tbody>            
             </table>
         </div>
 
@@ -48,12 +83,15 @@
                         <th>Winner</th>
                     </tr>
                 </thead>
-                <!-- Add table rows for results -->
+                <tbody id="resultsBody">
+                    <!-- Table rows will be dynamically inserted here -->
+                </tbody>
+                
             </table>
         </div>
     </div>
 
-    <div class="main-content" id="gameSection">
+    <div class="game-content" id="gameSection">
         <!-- Content Goes Here -->
         <div class="games-available">
             Games
@@ -70,7 +108,7 @@
 
             <div class="games2">
                 <div class="games-overlay2">
-                  <a href="game2.html""><p class="games-overlay-text2">CS:GO</p></a>
+                  <a href="game2.html""><p class="games-overlay-text2">Counter-Strike 2</p></a>
                 </div>
             </div>
             
@@ -93,36 +131,53 @@
         </section>
         
     </div>
+</div> 
+</div>    
 
-    <div class="sidebar">
-        <div class="logo">
-            <br><br>
-            <ul class="menu">
-                <li  class="active"> <a href ="index.html"><i class="fa fa-home" aria-hidden="true"></i>
-                <span class="sidebarFont">Home</span></a>
-                </li>
-                <li> <a href ="profile.html"><i class="fas fa-user"></i>
-                <span class="sidebarFont">Profile</span></a>
-                </li>
-                <li> <a href ="#"><i class="fas fa-file-invoice"></i>
-                <span class="sidebarFont">Tournaments</span></a>
-                </li>
-                <li> <a href ="#gameSection"><i class="fa fa-gamepad" aria-hidden="true"></i>
-                <span class="sidebarFont" style="margin-left:-5px;">Games</span></a>
-                </li>
-                <li> <a href ="contact.html"><i class="fa fa-phone" aria-hidden="true"></i>
-                <span class="sidebarFont">Contact</span></a>
-                </li>
-                <li> <a href ="about.html"><i style="margin-left:3px;" class="fa fa-info" aria-hidden="true"></i>
-                <span class="sidebarFont" style="margin-left:9px;">About</span></a>
-                </li>
-                <li> <a href ="/logout"><i class="fas fa-sign-out-alt"></i>
-                <span class="sidebarFont" style="margin-left:-3px;">Logout</span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <script>
+        // Get username from URL parameter and display it
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        document.getElementById('username-placeholder').innerText = 'Welcome, ' + username + '!';
+    </script>
 
+<script>
+    async function fetchTournaments() {
+        const response = await fetch('/tournaments');
+        const tournaments = await response.json();
+        const tableBody = document.getElementById('tournamentsBody');
+        tableBody.innerHTML = ''; // Clear existing rows
+        tournaments.forEach(tournament => {
+            const row = document.createElement('tr');
+            var date = tournament.tDate.toString().substring(0,10);
+            row.innerHTML = `
+                <td>${tournament.tournamentID}</td>
+                <td>${tournament.tournamentName}</td>
+                <td>${tournament.participants+'/'+tournament.numberOfTeams}</td>
+                <td>${date}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+    window.addEventListener('load', fetchTournaments);
+
+    async function fetchResults() {
+        const response = await fetch('/results');
+        const results = await response.json();
+        const tableBody = document.getElementById('resultsBody');
+        tableBody.innerHTML = ''; // Clear existing rows
+        results.forEach(result => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${result.tournamentID}</td>
+                <td>${result.tournamentName}</td>
+                <td>${result.winner}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+    window.addEventListener('load', fetchResults);
     
+</script>
 </body>
 </html>

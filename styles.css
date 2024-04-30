@@ -69,6 +69,7 @@
 /* Main Content Container */
 .main-content {
     flex: 1; /* Allow content to expand and push footer to the bottom */
+
 }
 
 .container {
@@ -216,10 +217,18 @@
     margin:auto; /* Center the container vertically */
     margin-right:10px;
     border-radius: 20px; /* Rounded corners */
-    background-image: url('game1.jpg');
+    background-image: url('game1.png');
     background-size: cover;
     position: relative;
     flex-basis:43%;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+  }
+  .games1:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   
   .games-overlay1 {
@@ -266,12 +275,21 @@
     background-size: cover;
     position: relative;
     flex-basis:43%;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
   }
+  .games2:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
   
   .games-overlay2 {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 255, 64, 0.3); /* Translucent overlay */
+    background-color: rgba(255, 0, 0, 0.3); /* Translucent overlay */
     position: absolute;
     top: 0;
     left: 0;
@@ -293,7 +311,7 @@
     transition: opacity 0.5s, transform 0.5s; /* Added transform transition */
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -40%); /* Initially move it down */
   }
   
@@ -314,7 +332,16 @@
     background-size: cover;
     position: relative;
     flex-basis:43%;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
   }
+  .games3:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
   
   .games-overlay3 {
     width: 100%;
@@ -362,7 +389,16 @@
     background-size: cover;
     position: relative;
     flex-basis:43%;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
   }
+  .games4:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
   
   .games-overlay4 {
     width: 100%;
@@ -678,9 +714,9 @@
 
 /* Footer Styles */
 .footer {
-    background-color: rgb(51, 51, 51,0.2); /* Change to desired footer background color */
+    background-color: rgb(51, 51, 51,0.0); /* Change to desired footer background color */
     color: #fff; /* Change to desired footer text color */
-    padding: 20px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
@@ -694,17 +730,19 @@
     top: 0;
     left:0;
     bottom:0;
-    width:110px;
+    width:100px;
     height:100vh;
-    padding:0 1.7rem;
+    padding:40px 1rem;
     color:#fff;
     overflow:hidden;
-    transition: all 0.5s linear;
-    background: black;
+    transition: all 0.4s linear;
+    background: rgb(0, 0, 0);
+    border-radius:0 30px 30px 0px;
   
   }
 .sidebarFont{
     font-family:sidebarFont;
+    white-space: nowrap;
 }
 
   .sidebar:hover{
@@ -713,7 +751,7 @@
   }
   .logo{
     height:80px;
-    padding:16px;
+    padding:16px 0px 16px 16px;
   }
   .menu{
     height:88%;
@@ -727,10 +765,9 @@
     margin:8px 0;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
-  }
-  .menu li:hover{
-      background: #e0e0e058;
-  
+}
+.menu li:hover{
+    background: #e0e0e058;
     }
   
   .menu a{
@@ -762,7 +799,7 @@
 }
 
 .welcome-text {
-    margin-left:160px;
+    margin-left:40px;
     font-size: 80px; /* Adjust font size as needed */
     color: #ffffff; /* Text color */
     margin-top: 30px; /* Adjust top margin as needed */
@@ -772,7 +809,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 36px; /* Adjust margin as needed */
-    margin-left:140px;
+    margin-left:25px;
     margin-right:30px;
 }
 
@@ -801,12 +838,13 @@
 .dashboard-table th,
 .dashboard-table td {
     padding: 8px;
+    text-align: center;
     border: 1px solid #ddd;
-}
-
-.dashboard-table th {
     background-color: #f2f2f2;
 }
+
+
+
 
 
 
@@ -814,8 +852,8 @@
 
 .create-tournament-btn {
     position:absolute;
-    top: 60px; /* Adjust top position as needed */
-    right: 80px; /* Adjust right position as needed */
+    top: 53px; /* Adjust top position as needed */
+    right: 41px; /* Adjust right position as needed */
     padding: 10px 20px; /* Adjust padding as needed */
     background-color: #2e8907; /* Button background color */
     color: #fff; /* Button text color */
@@ -835,3 +873,173 @@
     transform: scale(0.95); /* Button scaling effect on click */
 }
 
+
+/* CONTACT US */
+.contact-body{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    color:rgb(250, 250, 250);
+    border:1px solid white;
+    margin:30px;
+    border-radius:30px;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    display:flex;
+}
+.contactHead{
+    margin:30px 0 30px 120px;
+    font-family:loginFont;
+    font-size:50px;
+}
+.contactText{
+    margin:20px 0 20px 120px;
+    font-family:loginFont;
+    font-size:16px;
+}
+
+.contact-info
+{
+    margin: -20px 100px 0 -250px;
+    padding:10px;
+    flex-basis:150%;
+    padding:120px 0 0 0px;
+    width:200px;
+    line-height: 45px;;
+}
+
+.contact-form
+{
+    margin: 0 -250px 0 50px;
+    padding:30px;
+    flex-basis:150%;
+    border: 1px rgba(255, 255, 255, 0.701) solid;
+    border-radius:30px;
+    background:rgba(255, 255, 255, 0.123);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+    
+}
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contactSendBtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: 2px rgb(255, 255, 255) solid;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.contactSendBtn:hover {
+    background-color: #ff0202;
+    transition:0.3s ease-in-out;
+}
+
+.sendMessage{
+    margin:0 0 13px 0;
+}
+
+
+/* ABOUT */
+.about-container {
+    max-width:90%;
+    margin: 0 auto;
+    padding: 40px;
+    display:flex;
+    margin-top: 30px;
+}
+
+.about{
+    border:1px solid;
+    margin:10px auto;
+    max-width:30%;
+    border-radius: 7%;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+}
+.about:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.about-container h2 {
+    margin: 40px 0px 10px 0px;
+    text-align: center;
+    font-size:40px;
+}
+
+.about-container p {
+    margin: 20px;
+    text-align: justify;
+}
+
+.aboutUs{
+    margin:30px 0 30px 132px;
+    font-family:loginFont;
+    font-size:50px;
+}
+
+.aboutUsText{
+    margin:20px 0 20px 132px;
+    font-family:loginFont;
+    font-size:16px;
+}
+
+.aboutUsContactBtn{
+    max-width:130px;
+    margin: 60px auto;
+    text-decoration: none;
+    text-align: center;
+}
+
+.aboutFooter{
+    margin-top:50px;
+}
+
+
+  
+  

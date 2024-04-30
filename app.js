@@ -8,6 +8,7 @@ const app = express();
 const PORT = 2000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static(__dirname)); // Serve static files from the current directory
 app.use(session({
     secret: 'your-secret-key',
@@ -54,7 +55,7 @@ app.post('/login', async (req, res) => {
 
         if (user && bcrypt.compareSync(password, user.password)) {
             req.session.user = user;
-            res.redirect('/dashboard.html');
+            res.redirect('/dashboard?username=' + user.name);
         } else {
             res.send('Invalid username or password');
         }
@@ -62,6 +63,12 @@ app.post('/login', async (req, res) => {
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
+});
+
+// Serve dashboard page
+app.get('/dashboard', (req, res) => {
+    const username = req.query.username;
+    res.sendFile(__dirname + '/dashboard.html')
 });
 
 
@@ -99,9 +106,164 @@ app.get('/logout', (req, res) => {
 
 
 
+// PROFILE
+// API endpoint to fetch users
+app.get('/users', async (req, res) => {
+    const users = await User.find();
+    res.json(users);
+});
 
 
+// CREATE TOURNAMENT:
 
+// Define tournament schema and model
+const tournamentSchema = new mongoose.Schema({
+    tournamentID: String,
+    tournamentName: String,
+    numberOfTeams: Number,
+    participants:Number,
+    tDate: Date,
+    gameName: String,
+    additionalDetails: String
+},
+{
+    timestamps:true
+});
+
+const Tournament = mongoose.model('Tournament', tournamentSchema);
+
+app.post('/createTournament', async (req, res) => {
+    const {tournamentID, tournamentName, numberOfTeams, tDate,gameName,additionalDetails} = req.body;
+
+    try {
+        const tournament = await Tournament.findOne({ tournamentID });
+
+        if(!tournament){
+            const newTournament = new Tournament({tournamentID, tournamentName, numberOfTeams,participants:0, tDate,gameName,additionalDetails});
+            await newTournament.save();
+            res.send("Tournament created");
+        }
+        else{
+            res.send("Tournament already exists, please change the tournament ID");
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
+// fetch tournaments
+app.get('/tournaments', async (req, res) => {
+    try {
+        const tournaments = await Tournament.find();
+        res.json(tournaments);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
+// CREATE RESULT:
+
+// Define result schema and model
+const resultSchema = new mongoose.Schema({
+    tournamentID: String,
+    tournamentName:String,
+    winner:String
+},
+{
+    timestamps:true
+});
+
+const Result = mongoose.model('Result', resultSchema);
+
+app.post('/createResult', async (req, res) => {
+
+    const {tournamentID, winner} = req.body;
+
+    try {
+        const tournament = await Tournament.findOne({ tournamentID })
+        if(!tournament){
+            res.send("Tournament doesnt exist, please enter a valid Tournament ID");
+        }
+        else{
+            const tournamentName = tournament.tournamentName;
+            const result = await Result.findOne({ tournamentID });
+
+            if(!result){
+                const newResult = new Result({tournamentID, tournamentName, winner});
+                await newResult.save();
+                res.send("Result Declared");
+            }
+            else{
+                res.send("Result already declared, please change the tournament ID");
+            }
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
+// fetch results
+app.get('/results', async (req, res) => {
+    try {
+        const results = await Result.find();
+        res.json(results);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
+// CREATE PLAYERS:
+
+// Define result schema and model
+const playersSchema = new mongoose.Schema({
+    teamName: String,
+    playersNames:String,
+    email:String,
+    tournamentID:String,
+    tournamentName:String
+},
+{
+    timestamps:true
+});
+
+const Players = mongoose.model('Players', playersSchema);
+
+app.post('/playersRegistration', async (req, res) => {
+
+    const {teamName, playersNames,email,tournamentID} = req.body;
+
+    try {
+        const tournament = await Tournament.findOne({ tournamentID })
+        if(!tournament){
+            res.send("Tournament doesnt exist, please enter a valid Tournament ID");
+        }
+        else{
+            if(tournament.participants == tournament.numberOfTeams){
+                res.send("You are late, the tournament is full")
+            }
+            else{
+                const tournamentName = tournament.tournamentName;
+                tournament.participants +=1;
+
+                const newPlayers = new Players({teamName, playersNames,email,tournamentID,tournamentName});
+                
+                await newPlayers.save();
+                await tournament.save();
+                
+                res.send("Registration Successful");
+            }
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
 
 // Start server

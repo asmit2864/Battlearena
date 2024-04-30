@@ -33,7 +33,7 @@
 
         <h2>Create Tournament</h2>
 
-        <form class="login-form">
+        <form class="login-form" action="/createTournament" method="POST">
             <div class="form-group">
                 <label for="tID">Tournament ID:</label>
                 <input type="text" id="tID" name="tournamentID" placeholder="Enter ID of the tournament" required>
@@ -52,12 +52,16 @@
             </div>
             <div class="form-group">
                 <label for="game">Select Game:</label>
-                <select>
+                <select name="gameName">
                     <option>VALORANT</option>
-                    <option>CS:GO</option>
+                    <option>Counter-Strike 2</option>
                     <option>PUBG</option>
                     <option>WARZONE</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label for="addDetails">Additional Details:</label>
+                <textarea id="addDetails" name="additionalDetails" placeholder="Enter additional details (if any)"></textarea>
             </div>
             <button type="submit" class="login-button">Create</button>
         </form>
