@@ -22,7 +22,7 @@
         <div class="wave"></div>
     </div>
 
-    <a href="/dashboard" class="top-left-box">
+    <a href="javascript:history.back()" class="top-left-box">
         <div class="box-content">
             <p class="box-text">Dashboard</p>
         </div>
@@ -33,7 +33,7 @@
 
         <h2>Profile</h2>
 
-        <form class="login-form" id="userFrom">
+        <form class="login-form" id="userFrom" action="/updateProfile" method="POST">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name">
@@ -47,18 +47,17 @@
                 <input type="email" id="email" name="email">
             </div>
 
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="password">New Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm password:</label>
                 <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm your password" required>
-            </div> -->
+            </div>
 
             <br>
-            <button type="button" id="fetchButton" class="login-button">Fetch Data</button><br><br>
-            <a href="updateProfile.html"><button type="button" id="editButton" class="login-button">Edit Profile</button></a> 
+            <button type="submit"  class="login-button">Save Changes</button><br><br>
 
         </form>
 
@@ -66,22 +65,18 @@
     
     <script>
         // Fetch users from the backend and populate the form fields
-        document.getElementById('fetchButton').addEventListener('click', () => {
-          fetch('/users') // assuming the backend server is running on the same host
-            .then(response => response.json())
-            .then(users => {
-              if (users.length > 0) {
-                const user = users[0]; // Assuming we're populating the form with the first user's data
-                document.getElementById('name').value = user.name;
-                document.getElementById('email').value = user.email;
-                document.getElementById('org-name').value = user.orgName;
-              } else {
-                alert('No users found');
-              }
-            })
-            .catch(error => console.error('Error fetching users:', error));
-        });
+        async function fetchUser() {
+        
+            const response = await fetch('/users');
+            const user = await response.json();
+        
+            document.getElementById('name').value = user.name;
+            document.getElementById('email').value = user.email;
+            document.getElementById('org-name').value = user.orgName;
+        
+        }
 
+        window.addEventListener('load',fetchUser);
         
     </script>
 </body>

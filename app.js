@@ -7,9 +7,10 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const PORT = 2000;
 
+// middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(express.static(__dirname)); // Serve static files from the current directory
+app.use(express.json());
+app.use(express.static(__dirname));
 app.use(session({
     secret: 'your-secret-key',
     resave: false,
@@ -109,9 +110,39 @@ app.get('/logout', (req, res) => {
 // PROFILE
 // API endpoint to fetch users
 app.get('/users', async (req, res) => {
-    const users = await User.find();
-    res.json(users);
+    const email = req.session.user.email;
+    const users = await User.findOne({email});
+    if(!users){
+        res.send("Invalid user session");
+    }
+    else{
+        res.json(users);
+    }
 });
+
+// UPDATE PROFILE
+app.post('/updateProfile', async (req, res) => {
+    const {name, orgName, password} = req.body;
+
+    try {
+        const email = req.session.user.email;
+        const user = await User.findOne({email});
+        if(!user){
+            res.send("Invalid user session");
+        }
+        else{
+            user.name = name;
+            user.orgName = orgName;
+            user.password = bcrypt.hashSync(password, 10);
+            await user.save();
+            res.send("Changes saved successfully")
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 
 
 // CREATE TOURNAMENT:
@@ -194,6 +225,7 @@ app.post('/createResult', async (req, res) => {
             if(!result){
                 const newResult = new Result({tournamentID, tournamentName, winner});
                 await newResult.save();
+
                 res.send("Result Declared");
             }
             else{

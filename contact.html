@@ -24,10 +24,10 @@
     <div class="contact-container">
         
         <div class="contact-info">
-            <p><i style="font-size:30px; margin-right:4px;" class="fa fa-envelope" aria-hidden="true"></i>
-            <span style="font-size:29px;">Email:</span> <span style="font-size:20px;">asmitk2864@gmail.com</span></p>
-            <p><i style="font-size:30px;margin-right:14px;" class="fa fa-phone" aria-hidden="true"></i><span style="font-size:29px;">Phone:</span> <span style="font-size:20px;">+918937993669</span></p>
-            <p><i style="font-size:30px;margin-right:7px;" class="fa fa-address-book-o" aria-hidden="true"></i><span style="font-size:29px;">Address:</span> <span style="font-size:20px;">LPU, Phagwara, 144411, Punjab, INDIA</span></p>
+            <p><i style="font-size:30px; margin-right:10px;" class="fa fa-envelope" aria-hidden="true"></i>
+             <span style="font-size:20px;">asmitk2864@gmail.com</span></p>
+            <p><i style="font-size:30px;margin-right:20px;" class="fa fa-phone" aria-hidden="true"></i><span style="font-size:20px;">+918937993669</span></p>
+            <p><i style="font-size:30px;margin-right:27px;" class="fa fa-map-marker" aria-hidden="true"></i><span style="font-size:20px;">LPU, Phagwara, 144411, Punjab, INDIA</span></p>
         </div>
 
         <div class="contact-form">
@@ -51,6 +51,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div style="">Follow us on 
+                &nbsp&nbsp<a href="https://www.facebook.com/" style="text-decoration:none; color:white"> <i class="fa fa-facebook-official"  aria-hidden="true"></i></a>
+                &nbsp&nbsp<a href="https://www.instagram.com/" style="text-decoration:none; color:white"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                &nbsp&nbsp<a href="https://www.x.com/" style="text-decoration:none; color:white"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                &nbsp&nbsp<a href="https://www.linkedin.com/" style="text-decoration:none; color:white"> <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                &nbsp&nbsp<a href="https://www.github.com/" style="text-decoration:none; color:white"> <i class="fa fa-github" aria-hidden="true"></i></a>
+            </div><br>
             <p>&copy; 2024 Gaming Tournament Website. All rights reserved.</p>
         </div>
     </footer>
@@ -69,12 +76,7 @@
             }
             
             emailjs.send("service_3nf9sqi","template_l7bq75k",params)
-            .then((response)=>{
-                alert("Success");
-            },
-            (error) =>{
-                alert(error);
-            })
+            .then(alert("Message Sent!!"))
         }
     </script>
 </body>

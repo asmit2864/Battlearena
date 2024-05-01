@@ -5,8 +5,14 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    cursor:url('pointer32.png'),auto;
+
 }
 /* custom font */
+@font-face {
+    font-family: regular;
+    src: url(poppins.ttf);
+}
 @font-face {
     font-family: logoFont;
     src: url(logoFont.ttf);
@@ -69,13 +75,10 @@
 /* Main Content Container */
 .main-content {
     flex: 1; /* Allow content to expand and push footer to the bottom */
-
+    margin-bottom:-50px;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
+
 
 /* Navigation Bar Styles */
 .navbar {
@@ -100,9 +103,8 @@
 }
 
 .navbar-brand img {
-    width: 70px;
-    height: auto;
-    margin-right: 20px;
+    width: 100px;
+    margin: 0 5px 0 0;
     vertical-align: middle;
     transition: transform 0.3s ease-in-out; /* Smooth transition for the logo image */
 
@@ -138,6 +140,7 @@
     font-family: navBarFont;
     transition: all 0.3s ease-in-out;
     padding: 8px 15px;
+    cursor:url('link32.png'),auto;
 }
 
 .navbar-links ul li a:hover {
@@ -159,7 +162,7 @@
     padding: 10px 20px; /* Button padding */
     font-size: 16px; /* Button font size */
     font-family: loginRegisterFont;
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor:url('link32.png'),auto;
     border-radius: 20px; /* Rounded corners */
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition on hover */
 }
@@ -180,11 +183,17 @@
 }
 
 
+
 /* Hero Section Styles */
 .hero-section {
     text-align: center; /* Center align the hero text */
     padding: 200px 0px; /* Adjust vertical padding as needed */
     
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Hero Text Styles */
@@ -194,6 +203,8 @@
     font-family: sloganFont;
     text-transform: uppercase; /* Convert text to uppercase */
     font-weight: bold; /* Font weight */
+    letter-spacing: 4px;
+    margin:-38px 0 0 0;
 }
 
 /* Gaming zone */
@@ -262,7 +273,7 @@
   
   .games-overlay1:hover .games-overlay-text1 {
     opacity: 1;
-    cursor:pointer;
+    cursor:url('link32.png'),auto;
   }
   
 /* game2 */
@@ -317,7 +328,7 @@
   
   .games-overlay2:hover .games-overlay-text2 {
     opacity: 1;
-    cursor:pointer;
+    cursor:url('link32.png'),auto;
   }
   
 /* game3 */
@@ -374,7 +385,7 @@
   
   .games-overlay3:hover .games-overlay-text3 {
     opacity: 1;
-    cursor:pointer;
+    cursor:url('link32.png'),auto;
   }
   
 /* game4 */
@@ -431,7 +442,7 @@
   
   .games-overlay4:hover .games-overlay-text4 {
     opacity: 1;
-    cursor:pointer;
+    cursor:url('link32.png'),auto;
   }
 
   /* Modal Styles */
@@ -472,7 +483,7 @@
 .close1:focus,.close2:focus,.close3:focus,.close4:focus {
     color: rgb(221, 22, 19);
     text-decoration: none;
-    cursor: pointer;
+    cursor: url('link32.png'),auto;
 }
 
   
@@ -601,6 +612,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family:regular;
+    font-size:12px;
 }
 
 .login-container h2 {
@@ -620,25 +633,29 @@
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin: 0 0 5px 4px;
 }
 
-.form-group input {
+.form-group input,textarea,select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family:regular;
+    font-size:12px;
 }
 
 .login-button {
     width: 100%;
     padding: 10px;
+    margin:15px 0 -15px 0;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: url('link32.png'),auto;
     transition: background-color 0.3s ease-in-out;
+    font-family:regular;
 }
 
 .login-button:hover {
@@ -656,6 +673,7 @@
 .register-link a {
     color: #007bff;
     text-decoration: none;
+    cursor:url('link32.png'),auto;
 }
 
 .register-link a:hover {
@@ -666,6 +684,7 @@
 
 .game1-body{
     background-color: black;
+    font-family: regular;
 }
 #video-bg {
     position: fixed;
@@ -680,35 +699,137 @@
 
 .info-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 80%;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    max-width: 100%;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    /* border-radius: 10px; */
     overflow-y: auto; /* Enable vertical scroll if content overflows */
 }
 
 .info-content {
+    margin-bottom: 0px;
+    display:flex;
+    justify-content: space-between;
+}
+.info-content>h2 {
+    margin: 0 0 25px 10px;
+    color:white;
+    font-family:valorantFont;
+    font-size:50px;
+}
+
+/* Tournament info styles */
+.tournament-info {
+    background-color: rgb(249, 249, 249,0.2);
+    padding: 20px;
+    margin: 90px 60px 50px -250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width:30%;
+    text-align:justify;
+}
+
+.tournament-info h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.tournament-info p {
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
+.tournament-info ul li {
+    color: #ffffff;
+    margin: 0 0 20px 18px;
+}
+
+/* Eligibility styles */
+.eligibility {
+    background-color: rgb(234, 242, 255,0.2); /* Light blue */
+    padding: 20px;
+    margin: 90px 60px 50px 0;;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width:30%;
+    text-align:justify;
+}
+
+.eligibility h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.eligibility p {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+.eligibility ul li {
+    color: #ffffff;
+    margin: 0 0 20px 18px;
+}
+
+/* Gameplay styles */
+.gameplay {
+    background-color: rgb(255, 243, 230,0.2); /* Light orange */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 90px 100px 50px 0px;
+    min-width:30%;
+    text-align:justify;
+}
+
+.gameplay h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.gameplay p {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
 .create-tournament button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 13px 20px;
     font-size: 16px;
+    font-family:regular;
+    border: 1px solid white;
+    position: relative;
+    cursor: url('link32.png'),auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: rgb(255, 70, 85,0);
+    border-radius: 10px;
+    min-width: 200px;
+    color: #fff;
+    z-index: 0;
+    letter-spacing: 1px;
+    margin-bottom: -100px;
 }
 
-.create-tournament button:hover {
-    background-color: #0056b3;
+.create-tournament button::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -100px;
+    width: 150%;
+    height: 100%;
+    background: rgb(255, 70, 85,1);
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+    transform: translateX(-300px) skew(-20deg);
 }
 
-
+.create-tournament button:hover::before {
+    transform: translateX(0px) skew(-20deg);
+}
 
 
 
@@ -718,7 +839,9 @@
     color: #fff; /* Change to desired footer text color */
     padding: 40px 0;
     text-align: center;
+    font-family: regular;
 }
+
 
 
 
@@ -780,9 +903,11 @@
   }
   .menu a span{
     overflow: hidden;
+    cursor:url('link32.png'),auto;
   }
   .menu a i{
     font-size: 1.2rem;
+    cursor:url('link32.png'),auto;
   }
 
 
@@ -796,11 +921,13 @@
     flex-direction: column;
     transition: background-image 1s;
     min-height: 100vh; /* Set minimum height of the viewport */
+    font-family: regular;
+    font-size:13px;
 }
 
 .welcome-text {
     margin-left:40px;
-    font-size: 80px; /* Adjust font size as needed */
+    font-size: 70px; /* Adjust font size as needed */
     color: #ffffff; /* Text color */
     margin-top: 30px; /* Adjust top margin as needed */
 }
@@ -833,6 +960,7 @@
 .dashboard-table {
     width: 100%;
     border-collapse: collapse;
+    border-radius:5px;
 }
 
 .dashboard-table th,
@@ -859,7 +987,7 @@
     color: #fff; /* Button text color */
     border: none;
     border-radius: 15px; /* Rounded corners */
-    cursor: pointer;
+    cursor: url('link32.png'),auto;
     font-size:30px;
     font-family:loginRegisterFont;
     transition: background-color 0.3s, transform 0.3s; /* Add smooth transition for hovering and clicking effects */
@@ -884,6 +1012,8 @@
     border:1px solid white;
     margin:30px;
     border-radius:30px;
+    font-family: regular;
+    font-size:14px;
   }
   
   @keyframes gradient {
@@ -922,7 +1052,7 @@
     flex-basis:150%;
     padding:120px 0 0 0px;
     width:200px;
-    line-height: 45px;;
+    line-height: 45px;
 }
 
 .contact-form
@@ -965,7 +1095,7 @@
     color: #fff;
     border: 2px rgb(255, 255, 255) solid;
     border-radius: 30px;
-    cursor: pointer;
+    cursor: url('link32.png'),auto;
     transition: background-color 0.2s ease-in-out;
 }
 
@@ -1007,9 +1137,9 @@
 
 
 .about-container h2 {
-    margin: 40px 0px 10px 0px;
+    margin: 32px 0px 30px 0px;
     text-align: center;
-    font-size:40px;
+    font-size:35px;
 }
 
 .about-container p {
