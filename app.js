@@ -225,6 +225,7 @@ app.post('/createResult', async (req, res) => {
             if(!result){
                 const newResult = new Result({tournamentID, tournamentName, winner});
                 await newResult.save();
+                await Tournament.findByIdAndDelete(tournament._id);
 
                 res.send("Result Declared");
             }
