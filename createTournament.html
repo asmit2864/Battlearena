@@ -36,15 +36,15 @@
         <form class="login-form" action="/createTournament" method="POST">
             <div class="form-group">
                 <label for="tID">Tournament ID:</label>
-                <input type="text" id="tID" name="tournamentID" placeholder="Enter ID of the tournament" required>
+                <input type="text" id="tID" name="tournamentID" placeholder="Enter ID of the tournament"  required>
             </div>
             <div class="form-group">
                 <label for="tName">Tournament Name:</label>
-                <input type="text" id="tName" name="tournamentName" placeholder="Enter name of the tournament" required>
+                <input type="text" id="tName" name="tournamentName" placeholder="Enter name of the tournament" pattern="[A-Za-z0-9\s]{1,30}" title="Please enter a valid tournament name (up to 30 characters, letters, numbers and spaces only)" required>
             </div>
             <div class="form-group">
                 <label for="numTeams">Number of Teams:</label>
-                <input type="number" id="numTeams" name="numberOfTeams" placeholder="Enter number of teams" required>
+                <input type="number" id="numTeams" name="numberOfTeams" placeholder="Enter number of teams" pattern="[0-9]{1,3}" title="Please enter a valid number" required>
             </div>
             <div class="form-group">
                 <label for="tDate">Date:</label>

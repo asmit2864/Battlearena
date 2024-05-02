@@ -18,7 +18,7 @@ app.use(session({
 }));
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/GamingTournaments', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://asmit16903:asmit16903@gaming.kft4tbf.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>{
     console.log('Connected to MongoDB')
 })

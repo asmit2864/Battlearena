@@ -34,7 +34,7 @@
             <h2 class="sendMessage">Send Us a Message</h2>
             <form id="contact-form">
                 <label for="name">Name:</label>
-                <input type="text" id="full_name" name="name" required>
+                <input type="text" id="full_name" name="name" pattern="[A-Za-z\s]{1,20}" title="Please enter a valid name (up to 20 characters, letters and spaces only)" required>
                 
                 <label for="email">Email:</label>
                 <input type="email" id="emailID" name="email" required>
@@ -51,7 +51,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div style="">Follow us on 
+            <div>Follow us on 
                 &nbsp&nbsp<a href="https://www.facebook.com/" style="text-decoration:none; color:white"> <i class="fa fa-facebook-official"  aria-hidden="true"></i></a>
                 &nbsp&nbsp<a href="https://www.instagram.com/" style="text-decoration:none; color:white"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
                 &nbsp&nbsp<a href="https://www.x.com/" style="text-decoration:none; color:white"> <i class="fa fa-twitter" aria-hidden="true"></i></a>

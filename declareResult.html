@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label for="winner">Winner Team:</label>
-                <input type="text" id="winner" name="winner" placeholder="Enter name of the winner team" required>
+                <input type="text" id="winner" name="winner" placeholder="Enter name of the winner team" pattern="[A-Za-z0-9\s]{1,30}" title="Please enter a valid tournament name (up to 30 characters, letters, numbers and spaces only)" required>
             </div>
             
             <button type="submit" class="login-button">Declare</button>
