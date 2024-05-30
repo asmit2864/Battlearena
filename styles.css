@@ -1029,37 +1029,38 @@
   }
 
 .contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
+    max-width: 100%;
+    margin: auto;
+    padding: 50px;
     display:flex;
 }
 .contactHead{
-    margin:30px 0 30px 120px;
+    margin:30px auto;
+    width:fit-content;
     font-family:loginFont;
     font-size:50px;
 }
 .contactText{
-    margin:20px 0 20px 120px;
+    margin:auto;
+    width:fit-content;
     font-family:loginFont;
     font-size:16px;
 }
 
 .contact-info
 {
-    margin: -20px 100px 0 -250px;
-    padding:10px;
-    flex-basis:150%;
-    padding:120px 0 0 0px;
-    width:200px;
+    margin: auto 70px auto;
+    padding: 0 0 0 0;
+    flex-basis:50%;
+    width:100%;
     line-height: 45px;
 }
 
 .contact-form
 {
-    margin: 0 -250px 0 50px;
+    margin: auto;
     padding:30px;
-    flex-basis:150%;
+    flex-basis:50%;
     border: 1px rgba(255, 255, 255, 0.701) solid;
     border-radius:30px;
     background:rgba(255, 255, 255, 0.123);
@@ -1182,7 +1183,7 @@
 
 /* Styles for screens smaller than 768px (e.g., tablets) */
 @media only screen and (max-width: 768px) {
-    /* Adjust styles here */
+    /* ABOUT PAGE */
     .about-container {
         display: flex;
         flex-direction: column;
@@ -1203,9 +1204,11 @@
     .footer{
         margin-top:-100px;
     }
+
 }
-@media only screen and (max-width: 1100px) {
-    /* Adjust styles here */
+@media only screen and (max-width: 1115px) {
+    
+    /* ABOUT PAGE */
     .about-container {
         display: flex;
         flex-direction: column;
@@ -1225,12 +1228,24 @@
     }
     .footer{
         margin-top:-100px;
+    }
+
+    /* CONTACT PAGE */
+    .contact-info {
+        margin: auto 20px auto;
+        padding: 0;
+        flex-basis: 50%;
+        width: 100%;
+        line-height: 35px;
+    }
+    .contact-container{
+        margin:0 0 50px 0 !important;
     }
 }
 
 /* Styles for screens smaller than 576px (e.g., smartphones) */
 @media only screen and (max-width: 576px) {
-    /* Adjust styles here */
+    /* ABOUT PAGE */
     .aboutUsText {
         font-size: 14px;
     }
@@ -1243,4 +1258,84 @@
     .footer {
         font-size: 12px;
     }
+
+}
+
+/* Styles for screens smaller than 1000px (e.g., smartphones) */
+@media only screen and (max-width: 1000px) {
+    /* CONTACT PAGE */
+    .contact-container{
+        display:flex;
+        flex-direction: column;
+    }
+    .contact-info{
+        width:fit-content;
+        margin:auto;
+    }
+    .contact-form{
+        width:85%;
+        margin-top: 60px;
+    }
+
+}
+
+/* Styles for screens smaller than 820px (e.g., smartphones) */
+@media only screen and (max-width: 820px) {
+    /* CONTACT PAGE */
+    .contact-container{
+        display:flex;
+        flex-direction: column;
+    }
+    .contact-info{
+        width:fit-content;
+        margin:auto;
+    }
+    .contact-info>p>span{
+        font-size:15px !important;
+    }
+    .contact-form{
+        width:99%;
+        margin-top: 60px;
+    }
+
+    .contactText{
+        width:80%;
+        text-align:center;
+        font-size:12px !important;
+    }
+    .contactHead{
+        font-size:40px !important;
+    }
+
+}
+
+/* Styles for screens smaller than 485px (e.g., smartphones) */
+@media only screen and (max-width: 485px) {
+    /* CONTACT PAGE */
+    .contact-container{
+        display:flex;
+        flex-direction: column;
+        padding:30px !important;
+    }
+    .contact-info{
+        width:fit-content;
+        margin:auto;
+    }
+    .contact-info>p>span{
+        font-size:12px !important;
+    }
+    .contact-form{
+        width:100%;
+        margin-top: 40px;
+    }
+
+    .contactText{
+        width:80%;
+        text-align:center;
+        font-size:12px !important;
+    }
+    .contactHead{
+        font-size:35px !important;
+    }
+
 }
