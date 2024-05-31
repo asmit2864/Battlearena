@@ -230,6 +230,7 @@
     border-radius: 20px; /* Rounded corners */
     background-image: url('game1.png');
     background-size: cover;
+    background-position: center;
     position: relative;
     flex-basis:43%;
 
@@ -284,6 +285,7 @@
     border-radius: 20px; /* Rounded corners */
     background-image: url('game2.jpg');
     background-size: cover;
+    background-position: center;
     position: relative;
     flex-basis:43%;
 
@@ -341,6 +343,7 @@
     border-radius: 20px; /* Rounded corners */
     background-image: url('game3.jpg');
     background-size: cover;
+    background-position: center;
     position: relative;
     flex-basis:43%;
 
@@ -398,6 +401,7 @@
     border-radius: 20px; /* Rounded corners */
     background-image: url('game4.jpg');
     background-size: cover;
+    background-position: center;
     position: relative;
     flex-basis:43%;
 
@@ -1277,6 +1281,11 @@
         margin-top: 60px;
     }
 
+    /* INDEX PAGE */
+    .games-section{
+        flex-direc
+    }
+
 }
 
 /* Styles for screens smaller than 820px (e.g., smartphones) */
@@ -1336,6 +1345,42 @@
     }
     .contactHead{
         font-size:35px !important;
+    }
+
+}
+
+/* Styles for screens smaller than 1200px (e.g., smartphones) */
+@media only screen and (max-width: 1200px) {
+    /* INDEX PAGE */
+    .games-overlay-text1,.games-overlay-text2,.games-overlay-text3,.games-overlay-text4{
+        font-size:70px;
+    }
+
+    .games-section{
+        margin-bottom:90px;
+    }
+}
+
+/* Styles for screens smaller than 1050px (e.g., smartphones) */
+@media only screen and (max-width: 1050px) {
+    /* INDEX PAGE */
+    .games-overlay-text1,.games-overlay-text2,.games-overlay-text3,.games-overlay-text4{
+        font-size:60px;
+    }
+    .games-section{
+        margin-bottom:90px;
+    }
+    .navbar{
+        flex-direction:column;
+    }
+    .navbar-links{
+        margin:25px auto;
+    }
+    .login-register-buttons{
+        margin: auto;
+    }
+    .navbar-brand{
+        margin-top:10px;
     }
 
 }
