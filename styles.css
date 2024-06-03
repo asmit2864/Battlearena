@@ -1191,174 +1191,6 @@
 
 /* Default styles */
 
-/* Styles for screens smaller than 768px (e.g., tablets) */
-@media only screen and (max-width: 768px) {
-    /* ABOUT PAGE */
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        border:none;
-    }
-    .about {
-        margin-bottom: 20px;
-        margin:0px -100px 70px 0;
-        min-width:100%;
-        border-radius:10px
-    }
-    .aboutUsText{
-        text-align: center;
-    }
-    .contact-body{
-        height:100%;
-    }
-    .footer{
-        margin-top:-100px;
-    }
-
-    /* INDEX PAGE */
-    .hero-text{
-        white-space: collapse;
-        margin:0 10px 40px 10px;
-    }
-    .container{
-        margin-top:-140px !important;
-    }
-
-}
-@media only screen and (max-width: 1115px) {
-    
-    /* ABOUT PAGE */
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        border:none;
-    }
-    .about {
-        margin-bottom: 20px;
-        margin:0px -100px 70px 0;
-        min-width:100%;
-        border-radius:10px
-    }
-    .aboutUsText{
-        text-align: center;
-    }
-    .contact-body{
-        height:100%;
-    }
-    .footer{
-        margin-top:-100px;
-    }
-
-    /* CONTACT PAGE */
-    .contact-info {
-        margin: auto 20px auto;
-        padding: 0;
-        flex-basis: 50%;
-        width: 100%;
-        line-height: 35px;
-    }
-    .contact-container{
-        margin:0 0 50px 0 !important;
-    }
-
-    /* INDEX PAGE */
-    .hero-text{
-        margin-top:1px;
-    }
-}
-
-/* Styles for screens smaller than 576px (e.g., smartphones) */
-@media only screen and (max-width: 576px) {
-    /* ABOUT PAGE */
-    .aboutUsText {
-        font-size: 14px;
-    }
-    .about {
-        padding: 20px;
-    }
-    .contact-body{
-        height:100%;
-    }
-    .footer {
-        font-size: 12px;
-    }
-
-    /* INDEX PAGE */
-    .container{
-        margin-top:-130px !important;
-    }
-
-}
-
-/* Styles for screens smaller than 1000px (e.g., smartphones) */
-@media only screen and (max-width: 1000px) {
-    /* CONTACT PAGE */
-    .contact-container{
-        display:flex;
-        flex-direction: column;
-    }
-    .contact-info{
-        width:fit-content;
-        margin:auto;
-    }
-    .contact-form{
-        width:85%;
-        margin-top: 60px;
-    }
-
-    /* INDEX PAGE */
-    .games-section{
-        display:block;
-        margin-bottom:170px !important;
-    }
-    .games1{
-        margin:auto;
-    }
-    .games2{
-        margin:80px auto;
-    }
-    .games3{
-        margin:auto;
-    }
-    .games4{
-        margin:80px auto;
-    }
-    .games-available{
-        margin-bottom:80px;
-    }
-}
-
-/* Styles for screens smaller than 820px (e.g., smartphones) */
-@media only screen and (max-width: 820px) {
-    /* CONTACT PAGE */
-    .contact-container{
-        display:flex;
-        flex-direction: column;
-    }
-    .contact-info{
-        width:fit-content;
-        margin:auto;
-    }
-    .contact-info>p>span{
-        font-size:15px !important;
-    }
-    .contact-form{
-        width:99%;
-        margin-top: 60px;
-    }
-
-    .contactText{
-        width:80%;
-        text-align:center;
-        font-size:12px !important;
-    }
-    .contactHead{
-        font-size:40px !important;
-    }
-
-}
-
-/* Styles for screens smaller than 485px (e.g., smartphones) */
 @media only screen and (max-width: 485px) {
     /* CONTACT PAGE */
     .contact-container{
@@ -1408,23 +1240,137 @@
     }
     .gamepad{
         opacity:100;
+        width:30%;
+        margin-bottom:100px;
     }
 
 }
 
-/* Styles for screens smaller than 1200px (e.g., smartphones) */
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 576px) {
+    /* ABOUT PAGE */
+    .aboutUsText {
+        font-size: 14px;
+    }
+    .about {
+        padding: 20px;
+    }
+    .contact-body{
+        height:100%;
+    }
+    .footer {
+        font-size: 12px;
+    }
+
     /* INDEX PAGE */
-    .games-overlay-text1,.games-overlay-text2,.games-overlay-text3,.games-overlay-text4{
-        font-size:70px;
+    .container{
+        margin-top:-130px !important;
     }
 
+}
+
+@media only screen and (max-width: 768px) {
+    /* ABOUT PAGE */
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        border:none;
+    }
+    .about {
+        margin-bottom: 20px;
+        margin:0px -100px 70px 0;
+        min-width:100%;
+        border-radius:10px
+    }
+    .aboutUsText{
+        text-align: center;
+    }
+    .contact-body{
+        height:100%;
+    }
+    .footer{
+        margin-top:-100px;
+    }
+
+    /* INDEX PAGE */
+    .hero-text{
+        white-space: collapse;
+        margin:0 10px 40px 10px;
+    }
+    .container{
+        margin-top:-140px !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 820px) {
+    /* CONTACT PAGE */
+    .contact-container{
+        display:flex;
+        flex-direction: column;
+    }
+    .contact-info{
+        width:fit-content;
+        margin:auto;
+    }
+    .contact-info>p>span{
+        font-size:15px !important;
+    }
+    .contact-form{
+        width:99%;
+        margin-top: 60px;
+    }
+
+    .contactText{
+        width:80%;
+        text-align:center;
+        font-size:12px !important;
+    }
+    .contactHead{
+        font-size:40px !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 1000px) {
+    /* CONTACT PAGE */
+    .contact-container{
+        display:flex;
+        flex-direction: column;
+    }
+    .contact-info{
+        width:fit-content;
+        margin:auto;
+    }
+    .contact-form{
+        width:85%;
+        margin-top: 60px;
+    }
+
+    /* INDEX PAGE */
     .games-section{
-        margin-bottom:90px;
+        display:block;
+        margin-bottom:170px !important;
+    }
+    .games1{
+        margin:auto;
+    }
+    .games2{
+        margin:80px auto;
+    }
+    .games3{
+        margin:auto;
+    }
+    .games4{
+        margin:80px auto;
+    }
+    .games-available{
+        margin-bottom:80px;
     }
 }
 
-/* Styles for screens smaller than 1050px (e.g., smartphones) */
 @media only screen and (max-width: 1050px) {
     /* INDEX PAGE */
     .games-overlay-text1,.games-overlay-text2,.games-overlay-text3,.games-overlay-text4{
@@ -1451,3 +1397,58 @@
     }
 
 }
+
+
+@media only screen and (max-width: 1115px) {
+    
+    /* ABOUT PAGE */
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        border:none;
+    }
+    .about {
+        margin-bottom: 20px;
+        margin:0px -100px 70px 0;
+        min-width:100%;
+        border-radius:10px
+    }
+    .aboutUsText{
+        text-align: center;
+    }
+    .contact-body{
+        height:100%;
+    }
+    .footer{
+        margin-top:-100px;
+    }
+
+    /* CONTACT PAGE */
+    .contact-info {
+        margin: auto 20px auto;
+        padding: 0;
+        flex-basis: 50%;
+        width: 100%;
+        line-height: 35px;
+    }
+    .contact-container{
+        margin:0 0 50px 0 !important;
+    }
+
+    /* INDEX PAGE */
+    .hero-text{
+        margin-top:1px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    /* INDEX PAGE */
+    .games-overlay-text1,.games-overlay-text2,.games-overlay-text3,.games-overlay-text4{
+        font-size:70px;
+    }
+
+    .games-section{
+        margin-bottom:90px;
+    }
+}
+
