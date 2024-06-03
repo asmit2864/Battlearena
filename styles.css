@@ -207,17 +207,13 @@
     letter-spacing: 4px;
     margin:-20px auto;
 }
-.gamepad{
-    width:20%;
-    margin: -230px auto 10px auto;
-    opacity:0;
-}
+
 
 /* Gaming zone */
 .games-available{
     text-align: center;
     font-family:loginRegisterTextFont;
-    font-size:4vw;
+    font-size:8vw;
     color:white;
     margin-top:70px;
 }
@@ -1238,14 +1234,10 @@
     .register-button-home{
         font-size:15px;
     }
-    .gamepad{
-        opacity:100;
-        width:30%;
-        margin-bottom:130px;
-
-    }
+   
     .hero-text{
-        margin-top: 50px !important;
+        margin-top:90px !important;
+        font-size:50px
     }
 
     /* GAMES PAGES */
@@ -1342,6 +1334,10 @@
     }
     .container{
         margin-top:-140px !important;
+    }
+    .footer{
+        margin-top:50px !important;
+        padding-bottom:0;
     }
 
 }
