@@ -1242,6 +1242,10 @@
         opacity:100;
         width:30%;
         margin-bottom:100px;
+
+    }
+    .hero-text{
+        margin-top: 40px !important;
     }
 
 }
