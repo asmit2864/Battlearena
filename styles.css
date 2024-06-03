@@ -207,6 +207,11 @@
     letter-spacing: 4px;
     margin:-20px auto;
 }
+.gamepad{
+    width:20%;
+    margin: -230px auto 10px auto;
+    opacity:0;
+}
 
 /* Gaming zone */
 .games-available{
@@ -1401,7 +1406,9 @@
     .register-button-home{
         font-size:15px;
     }
-    
+    .gamepad{
+        opacity:100;
+    }
 
 }
 
