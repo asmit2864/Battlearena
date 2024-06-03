@@ -1241,11 +1241,11 @@
     .gamepad{
         opacity:100;
         width:30%;
-        margin-bottom:100px;
+        margin-bottom:130px;
 
     }
     .hero-text{
-        margin-top: 40px !important;
+        margin-top: 50px !important;
     }
 
 }
