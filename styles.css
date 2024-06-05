@@ -1200,6 +1200,7 @@
         display:flex;
         flex-direction: column;
         padding:30px !important;
+        
     }
     .contact-info{
         width:fit-content;
@@ -1209,8 +1210,11 @@
         font-size:12px !important;
     }
     .contact-form{
-        width:100%;
-        margin-top: 40px;
+        min-width:100%;
+        margin-left:0;
+        margin-right:0;
+        margin-top: 35px !important;
+        margin-bottom:70px !important;
     }
 
     .contactText{
@@ -1338,6 +1342,32 @@
         border-radius:3px;
         padding:3px 6px 4px 5px;
         text-align:center;
+    }
+
+    /* ABOUT */
+    .aboutUs{
+        font-size:40px;
+    }
+    .aboutUsText{
+        font-size:13px !important;
+    }
+    .about-container{
+        padding:0;
+        margin-top:40px;
+    }
+    .about>p{
+        margin:8px;
+    }
+
+    /* PROFILE */
+    .login-container{
+       width:80% !important;
+       margin-top:30px;
+    }
+
+    /* FOOTER */
+    .footer{
+        margin-bottom:-40px !important;
     }
 }
 
