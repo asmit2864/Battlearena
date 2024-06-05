@@ -213,7 +213,7 @@
 .games-available{
     text-align: center;
     font-family:loginRegisterTextFont;
-    font-size:8vw;
+    font-size:4vw;
     color:white;
     margin-top:70px;
 }
@@ -878,6 +878,11 @@
     width:270px;
     transition: 0.5s;
   }
+
+  #closeMenu{
+    display:none;
+  }
+
   .logo{
     height:80px;
     padding:16px 0px 16px 16px;
@@ -933,7 +938,7 @@
 
 .welcome-text {
     margin-left:40px;
-    font-size: 70px; /* Adjust font size as needed */
+    font-size: 40px; /* Adjust font size as needed */
     color: #ffffff; /* Text color */
     margin-top: 30px; /* Adjust top margin as needed */
 }
@@ -941,11 +946,13 @@
 .dashboard-hero-section {
     display: flex;
     justify-content: space-between;
-    margin-top: 36px; /* Adjust margin as needed */
+    margin-top: 0px; /* Adjust margin as needed */
     margin-left:25px;
     margin-right:30px;
 }
-
+#btnn{
+    display:none;
+}
 .dashboard-section {
     flex: 0 0 48%; /* Adjust width of each section */
     background-color: rgba(255, 255, 255, 0.7); /* Translucent background color */
@@ -1258,6 +1265,12 @@
         padding:13px;
         font-size:10px;
     }
+    .games-overlay-text1,.games-overlay-text2{
+        font-size:60px !important;
+    }
+    .games-overlay-text2{
+        margin-top:30px !important;
+    }
     .tournament-info ul li,.eligibility ul li{
         margin-left:10px;
     }
@@ -1279,6 +1292,53 @@
         padding:10px;
     }
 
+    /* DASHBOARD */
+    .create-tournament-btn{
+        left:10% !important;
+        top:20% !important;
+    }
+    
+    .dashboard-section{
+        width:100%;
+        margin:auto;
+    }
+    .welcome-text{
+        margin-left:70px;
+    }
+    #resultsBody{
+        font-size:10px;
+    }
+    .sidebar{
+        opacity:1;
+        position: absolute;
+        width:270px;
+        left:-270px;
+        z-index:2;
+    }
+    
+    #btnn{
+        display:block;
+        position:absolute;
+        left:20px;
+        font-size:25px;
+        border:1px solid white;
+        text-align:center;
+        border-radius:3px;
+        color:white;
+        top:45px;
+        width:30px;
+    }
+
+    #closeMenu{
+        display:block;
+        font-size:20px;
+        margin-left:20px;
+        border:1px solid white;
+        width:fit-content;
+        border-radius:3px;
+        padding:3px 6px 4px 5px;
+        text-align:center;
+    }
 }
 
 
@@ -1340,6 +1400,16 @@
         padding-bottom:0;
     }
 
+    /* DASHBOARD */
+    .create-tournament-btn{
+        top:22%;
+        left:22%;
+        font-size:20px;
+    }
+    .dashboard-section{
+        margin-top:80px;
+    }
+    
 }
 
 
@@ -1478,6 +1548,11 @@
     .hero-text{
         margin-top:1px;
     }
+
+    /* DASHBOARD */
+    .dashboard-hero-section{
+        display:block;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1489,5 +1564,8 @@
     .games-section{
         margin-bottom:90px;
     }
+
+    /* DASHBOARD */
+
 }
 

@@ -18,7 +18,8 @@
 <body class="dashboard-body">
     
     <div style="display:flex;">  
-        <div class="sidebar">
+        <div class="sidebar" id="menu">
+            <i id="closeMenu" onclick="sidebarHide()" class="fa fa-arrow-left" aria-hidden="true"></i>
         <div class="logo">
             <br><br>
             <ul class="menu">
@@ -52,7 +53,8 @@
 
 <div style="width:100%;">   
     <h1 id="username-placeholder" class="welcome-text"> </h1>
-        
+    <i id='btnn' onclick="sidebarShow()" class="fa fa-bars" aria-hidden="true"></i>
+    
     <a  href="createTournament.html"><button class="create-tournament-btn">Create Tournament</button></a>
     <div class="dashboard-hero-section">
         <div class="dashboard-section">
@@ -155,8 +157,18 @@
         // Get username from URL parameter and display it
         const urlParams = new URLSearchParams(window.location.search);
         const username = urlParams.get('username');
-        document.getElementById('username-placeholder').innerText = 'Welcome, ' + username + '!';
+        document.getElementById('username-placeholder').innerText = 'Welcome,\n ' + username;
     </script>
+
+<script>
+    function sidebarShow(){
+        document.getElementById('menu').style.left='0%';
+    }
+
+    function sidebarHide(){
+        document.getElementById('menu').style.left='-270px';
+    }
+</script>
 
 <script>
     async function fetchTournaments() {
